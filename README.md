@@ -16,6 +16,7 @@ now runing on a host machine on a webpage, connect to the LAN ip of the host on 
 
 
 future plans:</br>
+make the port number configurable + config files that manage other things </br>
 make posting and getting automatic</br>
 support file transfer </br>
 support for clipboard history</br>
