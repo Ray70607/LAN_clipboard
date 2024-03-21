@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Area Form</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <textarea id="text_area" rows="10" cols="50"></textarea><br>
+    <button onclick="submitData()">Submit via POST</button>
+    <button onclick="getData()">Get Data via GET</button>
+</div>
+
+<script>
+    window.onload= function () {
+        getData()
+    }
+function submitData() {
+    var text = document.getElementById("text_area").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/submit", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({data: text}));
+}
+
+function getData() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status == 200) {
+                document.getElementById("text_area").value = xhr.responseText;
+            }
+        }
+    };
+    xhr.open("GET", "/get_data", true);
+    xhr.send();
+}
+</script>
+</body>
+</html>
