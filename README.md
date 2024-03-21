@@ -10,4 +10,4 @@ make posting and getting automatic</br>
 support file transfer </br>
 support for clipboard history</br>
 compiling into exe and apk</br>
-
+maybe get rid of the web page and integrate it into the system 
